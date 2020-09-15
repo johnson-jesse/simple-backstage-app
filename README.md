@@ -186,6 +186,9 @@ builder.add(
 > account. If this is your first time, you will be asked to authorize and then
 > are redirected to the catalog page if all is well.
 
+## Auth Summary
+> We modified three files. Starting with app-config.yml by adding in GitHub as a provider. Then apis.ts where we registered GithubAuth as usable API. We then modified App.tsx where we included the SignInPage with a single provider for our GitHub configuration.
+
 # Where to go from here
 
 > You're probably eager to write your first custom plugin. Follow this next
