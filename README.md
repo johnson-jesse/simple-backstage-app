@@ -81,22 +81,20 @@ auth:
 
 2. Before we can continue we need to create a GitHub oauth app.
 
-```
-> Log into http://github.com
-> Navigate to (Settings > Developer Settings > OAuth Apps > New OAuth App)[https://github.com/settings/applications/new]
-> Set Homepage URL = http://localhost:3000
-> Set Callback URL = http://localhost:7000/auth/github
-> Click [Register application]
-> On the next page, you will see your new Client ID and Client Secret. We will utilize those in a minute
-```
+- Log into http://github.com
+- Navigate to [Settings > Developer Settings > OAuth Apps > New OAuth App](https://github.com/settings/applications/new)
+- Set Homepage URL = http://localhost:3000
+- Set Callback URL = http://localhost:7000/auth/github
+- Click [Register application]
+- On the next page, you will see your new Client ID and Client Secret. We will utilize those in a minute
 
 3. The yaml file above will look for auth values from environment variables. I've stuffed mine into my startup profile.
 
 ```zsh
 # On a macOS Catalina with Z Shell
 # ------ simple-backstage-app GitHub
-export AUTH_GITHUB_CLIENT_ID=MY_CLIENT_ID_FROM_ABOVE
-export AUTH_GITHUB_CLIENT_SECRET=MY_CLIENT_SECRET_FROM_ABOVE
+export AUTH_GITHUB_CLIENT_ID=xxx
+export AUTH_GITHUB_CLIENT_SECRET=xxx
 ## uncomment if using enterprise
 # export AUTH_GITHUB_ENTERPRISE_INSTANCE_URL=https://github.{MY_BIZ}.com
 ```
@@ -112,8 +110,8 @@ export AUTH_GITHUB_CLIENT_SECRET=MY_CLIENT_SECRET_FROM_ABOVE
 % env
 # should output something like
 > ...
-> AUTH_GITHUB_CLIENT_ID=xxx
-> AUTH_GITHUB_CLIENT_SECRET=xxx
+> AUTH_GITHUB_CLIENT_ID=someClientId
+> AUTH_GITHUB_CLIENT_SECRET=someClientSecret
 > ...
 ```
 
