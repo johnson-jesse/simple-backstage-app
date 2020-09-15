@@ -29,7 +29,19 @@ lighthouse:
   baseUrl: http://localhost:3003
 
 auth:
-  providers: {}
+  providers:
+    github:
+      development:
+        clientId:
+          $secret:
+            env: AUTH_GITHUB_CLIENT_ID
+        clientSecret:
+          $secret:
+            env: AUTH_GITHUB_CLIENT_SECRET
+        ## uncomment the following three lines if using enterprise
+        # enterpriseInstanceUrl:
+        #  $secret:
+        #    env: AUTH_GITHUB_ENTERPRISE_INSTANCE_URL
 
 catalog:
   locations:

@@ -12,6 +12,8 @@ import {
   OAuthRequestManager,
   storageApiRef,
   WebStorage,
+  githubAuthApiRef,
+  GithubAuth
 } from '@backstage/core';
 
 import {
@@ -58,7 +60,19 @@ export const apis = (config: ConfigApi) => {
   );
 
   builder.add(storageApiRef, WebStorage.create({ errorApi }));
-  builder.add(oauthRequestApiRef, new OAuthRequestManager());
+  
+  const oauthRequestApi = builder.add(
+    oauthRequestApiRef,
+    new OAuthRequestManager(),
+  );
+  
+  builder.add(
+    githubAuthApiRef,
+    GithubAuth.create({
+      discoveryApi,
+      oauthRequestApi,
+    }),
+  );
 
   builder.add(catalogApiRef, new CatalogClient({ discoveryApi }));
   builder.add(githubActionsApiRef, new GithubActionsClient());
