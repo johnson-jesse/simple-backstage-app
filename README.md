@@ -43,7 +43,7 @@ application loaded at `localhost:3000`. This could take a couple minutes.
 
 ```zsh
 # You should see positive verbiage in your terminal output
-ℹℹ ｢wdm｣: Compiled successfully.
+ℹ ｢wdm｣: Compiled successfully.
 ```
 
 Since there is no auth currently configured, you are automatically entered as a
@@ -89,6 +89,16 @@ auth:
 - On the next page, you will see your new Client ID and Client Secret. We will utilize those in a minute
 
 3. The yaml file above will look for auth values from environment variables. I've stuffed mine into my startup profile.
+  <details><summary>alternative to startup profiles...</summary>
+  <p>
+     
+  ```zsh
+  # Pass values on the command line when starting the backend. Not my favorite. Too much typing.
+  AUTH_GITHUB_CLIENT_ID=xxx AUTH_GITHUB_CLIENT_SECRET=xxx  yarn --cwd packages/backend start
+  ```
+  
+  </p>
+  </details>
 
 ```zsh
 # On a macOS Catalina with Z Shell
